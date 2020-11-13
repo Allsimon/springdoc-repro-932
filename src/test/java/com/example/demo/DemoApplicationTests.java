@@ -18,7 +18,7 @@ class DemoApplicationTests {
 
 	@Test
 	void repro932() throws Exception {
-		var generatedOpenAPIFile = mockMvc.perform(get("/v3/api-docs")).andReturn().getResponse().getContentAsString();
+		var generatedOpenAPIFile = mockMvc.perform(get("/v3/api-docs/public")).andReturn().getResponse().getContentAsString();
 
 		assertThat(generatedOpenAPIFile)
 				.contains(MyConfiguration.CUSTOM_DESCRIPTION);
